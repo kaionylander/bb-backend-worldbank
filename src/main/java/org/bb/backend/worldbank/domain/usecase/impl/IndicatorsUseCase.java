@@ -21,6 +21,8 @@ public class IndicatorsUseCase implements IIndicatorsUseCase {
     @Inject
     WorldBankClientServiceImpl worldBankClientService;
 
+    final String FORMAT = "json";
+
     @Inject
     private ObjectMapper objectMapper;
 
@@ -29,7 +31,7 @@ public class IndicatorsUseCase implements IIndicatorsUseCase {
 
         try {
 
-            String jsonResponse = worldBankClientService.getIndicatorsByCountry(countryCode);
+            String jsonResponse = worldBankClientService.getIndicatorsByCountry(countryCode, FORMAT);
 
             // Parse the JSON array containing DataPoint objects
             JsonNode jsonNode = objectMapper.readTree(jsonResponse);
