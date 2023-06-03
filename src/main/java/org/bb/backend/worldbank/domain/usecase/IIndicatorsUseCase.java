@@ -1,7 +1,9 @@
 package org.bb.backend.worldbank.domain.usecase;
 
+import org.bb.backend.worldbank.infra.client.response.WorldBankData;
+
 public interface IIndicatorsUseCase {
 
-    String getIndicatorsByCountry(String countryCode);
+    WorldBankData getIndicatorsByCountry(String countryCode);
 
 }

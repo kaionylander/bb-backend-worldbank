@@ -4,6 +4,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.bb.backend.worldbank.app.service.IIndicatorsService;
 import org.bb.backend.worldbank.domain.usecase.IIndicatorsUseCase;
+import org.bb.backend.worldbank.infra.client.response.WorldBankData;
 
 @ApplicationScoped
 public class IndicatorsService implements IIndicatorsService {
@@ -12,7 +13,7 @@ public class IndicatorsService implements IIndicatorsService {
     IIndicatorsUseCase indicatorsUseCase;
 
     @Override
-    public String getIndicatorsByCountry(String countryCode) {
+    public WorldBankData getIndicatorsByCountry(String countryCode) {
 
         return indicatorsUseCase.getIndicatorsByCountry(countryCode);
 
