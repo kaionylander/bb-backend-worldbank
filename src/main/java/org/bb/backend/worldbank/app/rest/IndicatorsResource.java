@@ -8,7 +8,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import org.bb.backend.worldbank.app.service.IIndicatorsService;
-import org.bb.backend.worldbank.infra.client.response.WorldBankData;
+import org.bb.backend.worldbank.app.rest.response.IndicatorsResponse;
 
 @Path("/worldbank")
 public class IndicatorsResource {
@@ -20,7 +20,7 @@ public class IndicatorsResource {
     @GET
     @Path("/indicators")
     @Produces(MediaType.APPLICATION_JSON)
-    public WorldBankData getIndicators(@QueryParam("countryCode") String countryCode) {
+    public IndicatorsResponse getIndicators(@QueryParam("countryCode") String countryCode) {
         return indicatorsService.getIndicatorsByCountry(countryCode);
     }
 

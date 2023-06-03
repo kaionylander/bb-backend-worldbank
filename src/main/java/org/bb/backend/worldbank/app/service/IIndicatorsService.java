@@ -1,9 +1,9 @@
 package org.bb.backend.worldbank.app.service;
 
-import org.bb.backend.worldbank.infra.client.response.WorldBankData;
+import org.bb.backend.worldbank.app.rest.response.IndicatorsResponse;
 
 public interface IIndicatorsService {
 
-    WorldBankData getIndicatorsByCountry(String countryCode);
+    IndicatorsResponse getIndicatorsByCountry(String countryCode);
 
 }
