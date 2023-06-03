@@ -21,7 +21,6 @@ public class IndicatorsUseCase implements IIndicatorsUseCase {
     @Inject
     WorldBankClientServiceImpl worldBankClientService;
     static final String FORMAT = "json";
-
     @Inject
     private ObjectMapper objectMapper;
 
