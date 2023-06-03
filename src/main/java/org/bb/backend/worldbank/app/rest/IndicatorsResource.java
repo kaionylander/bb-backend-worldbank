@@ -24,5 +24,4 @@ public class IndicatorsResource {
         return indicatorsService.getIndicatorsByCountry(countryCode);
     }
 
-
 }

@@ -15,4 +15,5 @@ public class DataPoint {
     private String unit;
     private String obs_status;
     private Integer decimal;
+
 }

@@ -12,5 +12,4 @@ public class WorldBankData {
     private Metadata metadata;
     private List<DataPoint> data;
 
-
 }

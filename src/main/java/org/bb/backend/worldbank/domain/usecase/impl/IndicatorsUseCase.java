@@ -55,8 +55,5 @@ public class IndicatorsUseCase implements IIndicatorsUseCase {
             throw new RuntimeException(e);
         }
 
-
-
     }
-
 }

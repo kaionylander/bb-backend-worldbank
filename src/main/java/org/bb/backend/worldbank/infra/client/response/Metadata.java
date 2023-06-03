@@ -14,4 +14,3 @@ public class Metadata {
     private String lastupdated;
 
 }
-
