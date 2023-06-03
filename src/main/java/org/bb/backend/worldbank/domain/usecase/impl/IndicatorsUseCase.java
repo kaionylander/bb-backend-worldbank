@@ -16,7 +16,6 @@ public class IndicatorsUseCase implements IIndicatorsUseCase {
 
         return worldBankClientService.getIndicatorsByCountry(countryCode);
 
-        //return "IndicatorsUseCase = " + countryCode;
     }
 
 }

@@ -11,8 +11,6 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 @RegisterProvider(WorldBankClientInterceptor.class)
 public interface IWorldBankClientService {
 
-    public final String TEXT_CSS = "text/css";
-
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     String getIndicatorsByCountry(@PathParam("countryCode") String countryCode, @QueryParam("format") String format);
