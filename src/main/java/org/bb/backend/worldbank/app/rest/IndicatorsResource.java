@@ -9,13 +9,14 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import org.bb.backend.worldbank.app.service.IIndicatorsService;
 import org.bb.backend.worldbank.app.rest.response.IndicatorsResponse;
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 @Path("/worldbank")
+@Tag(name = "Indicadores")
 public class IndicatorsResource {
 
     @Inject
     IIndicatorsService indicatorsService;
-
 
     @GET
     @Path("/indicators")

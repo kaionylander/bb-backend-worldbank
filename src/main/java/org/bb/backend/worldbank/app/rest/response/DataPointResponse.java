@@ -10,7 +10,6 @@ import org.bb.backend.worldbank.infra.client.response.Indicator;
 public class DataPointResponse {
 
     private Indicator indicator;
-
     private Country country;
     private String date;
     private Double value;
