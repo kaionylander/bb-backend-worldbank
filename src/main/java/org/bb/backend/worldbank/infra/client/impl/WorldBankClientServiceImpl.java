@@ -12,9 +12,9 @@ public class WorldBankClientServiceImpl {
     @RestClient
     IWorldBankClientService worldBankClientService;
 
-    public String getIndicatorsByCountry(String countryCode) {
+    public String getIndicatorsByCountry(String countryCode, String format) {
 
-        return worldBankClientService.getIndicatorsByCountry(countryCode, "json");
+        return worldBankClientService.getIndicatorsByCountry(countryCode, format);
 
     }
 
