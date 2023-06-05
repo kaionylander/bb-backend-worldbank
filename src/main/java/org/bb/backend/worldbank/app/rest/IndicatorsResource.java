@@ -7,8 +7,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
-import org.bb.backend.worldbank.app.service.IIndicatorsService;
 import org.bb.backend.worldbank.app.rest.response.IndicatorsResponse;
+import org.bb.backend.worldbank.app.service.IIndicatorsService;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 @Path("/worldbank")

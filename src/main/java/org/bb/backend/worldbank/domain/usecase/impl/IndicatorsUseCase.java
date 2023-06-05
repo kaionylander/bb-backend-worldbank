@@ -10,11 +10,15 @@ import jakarta.inject.Inject;
 import org.bb.backend.worldbank.app.rest.response.DataPointResponse;
 import org.bb.backend.worldbank.app.rest.response.IndicatorsResponse;
 import org.bb.backend.worldbank.domain.usecase.IIndicatorsUseCase;
+import org.bb.backend.worldbank.exception.NoContentCustomException;
+import org.bb.backend.worldbank.exception.NullCountryCodeException;
 import org.bb.backend.worldbank.infra.client.impl.WorldBankClientServiceImpl;
-import org.bb.backend.worldbank.infra.client.response.*;
+import org.bb.backend.worldbank.infra.client.response.DataPoint;
+import org.bb.backend.worldbank.infra.client.response.Metadata;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @ApplicationScoped
 public class IndicatorsUseCase implements IIndicatorsUseCase {
@@ -30,11 +34,19 @@ public class IndicatorsUseCase implements IIndicatorsUseCase {
 
         try {
 
+            if(countryCode.isEmpty() || Objects.isNull(countryCode)) {
+                throw new NullCountryCodeException();
+            }
+
             String jsonResponse = worldBankClientService.getIndicatorsByCountry(countryCode, FORMAT);
 
             // Parse the JSON array containing DataPoint objects
             JsonNode jsonNode = objectMapper.readTree(jsonResponse);
             JsonNode dataNode = jsonNode.get(1); // Get the second element in the array (the data)
+
+            if (dataNode.isNull()) {
+                throw new NoContentCustomException();
+            }
 
             // Deserialize the DataPoint objects
             List<DataPoint> dataPoints = objectMapper.readValue(dataNode.toString(), new TypeReference<List<DataPoint>>() {});
