@@ -1,4 +1,4 @@
-package org.bb.backend.worldbank.app;
+package org.bb.backend.worldbank.app.rest;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
